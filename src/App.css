@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+
+.progress {
+  display: flex;
+  gap: 6rem;
+}
+
+.progress > p {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 50px;
+  padding: 10px 0;
+}
+
+.progress > p.current {
+  background-color: blue;
+}
+
+.inputTitle {
+  font-size: 20pt;
+}

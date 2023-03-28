@@ -16,12 +16,14 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header > h1 {
+  margin: 0;
+  margin-bottom: 30px;
+  padding-top: 20px;
 }
 
 .App-link {
@@ -37,10 +39,10 @@
   }
 }
 
-
 .progress {
   display: flex;
   gap: 6rem;
+  margin-left: 25%;
 }
 
 .progress > p {
@@ -48,12 +50,91 @@
   border-radius: 50%;
   width: 50px;
   padding: 10px 0;
+  position: relative;
+
+}
+.progress > p::before {
+  content: "";
+  position: absolute;
+  right: -6rem;
+  width: 6rem;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.progress > p.last::before {
+  content: "";
+  position: absolute;
+  right: -6rem;
+  width: 6rem;
+  height: 0px;
+  background-color: white;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .progress > p.current {
-  background-color: blue;
+  background-color: turquoise;
 }
 
 .inputTitle {
   font-size: 20pt;
+}
+
+.backNext {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 150px;
+}
+
+.backNext > #back {
+  grid-column: 1 / 2;
+  margin-left: 75px;
+  min-width: 100px;
+  font-size: 14pt;
+  justify-self: start;
+  border-radius: 5px;
+}
+
+.backNext > #next {
+  grid-column: 3 / 4;
+  margin-right: 75px;
+  min-width: 100px;
+  font-size: 14pt;
+  justify-self: end;
+  border-radius: 5px;
+}
+
+#back:hover {
+  background-color: turquoise;
+}
+
+#next:hover {
+  background-color: turquoise;
+}
+
+#home:hover {
+  background-color: turquoise;
+}
+
+#home {
+  min-width: 100px;
+  font-size: 14pt;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+#inputKasten {
+  margin-top: 150px;
+}
+
+.werte {
+  font-size: 10pt;
+}
+
+#input:hover {
+  border: 2px solid turquoise;
+  border-radius: 3px;
 }

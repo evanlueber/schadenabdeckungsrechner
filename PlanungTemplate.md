@@ -24,17 +24,21 @@ Ich informiere regelmässig über meine Tätigkeiten.
 
 ## Liste der noch anstehenden Ideen
 
-* [x] <Mehrere Schritte machen>
-* [x] <Ausgabe als Prozent>
-* [x] <Ausgabe in CHF>
-* [x] <Schritte anzeigen>
-* [x] <Next button>
-* [x] <Back button>
-* [x] <Home button>
-* [ ] <Linien zwischen den Schritten>
-* [ ] <Hervorheben der Mitte der Seite>
-* [ ] <Pages mit Erklärungen>
-* [ ] <Hintergrungbild>
+* Mehrere Schritte machen
+* Ausgabe als Prozent
+* Ausgabe in CHF
+* Schritte anzeigen
+* Next button
+* Back button
+* Home button
+* Linien zwischen den Schritten
+* Hervorheben der Mitte der Seite
+* Hintergrungbild
+* Kommentare
+* Extra Box
+* Hovereffekte
+* Nur Zahlen eingeben können
+* Zahlenformat mit Hochkommas
 
 ---
 
@@ -44,25 +48,33 @@ Ich informiere regelmässig über meine Tätigkeiten.
 
 #### offen
 
-* [ ] <Hervorheben der Mitte der Seite>
-* [ ] <Pages mit Erklärungen>
-* [ ] <Hintergrungbild>
+* [x] Hervorheben der Mitte der Seite
+* [x] Pages mit Erklärungen>
+* [x] Hintergrungbild
 
 #### in Arbeit
 
-* [ ] <Linien zwischen den Schritten>
+* [x] Linien zwischen den Schritten
 
 #### erledigt
 
-* [x] <Schritte anzeigen>
+* [x] Schritte anzeigen
+* [x] Linien zwischen den Schritten
+* [x] Hervorheben der Mitte der Seite
+* [x] Hintergrungbild
+* [x] Kommentare
+* [x] Extra Box
+* [x] Hovereffekte
+* [x] Nur Zahlen eingeben können
+* [x] Zahlenformat mit Hochkommas
 
 ---
 
 ## Liste der zuvor abgeschlossenen Arbeiten
 
-* [x] <Mehrere Schritte machen>
-* [x] <Ausgabe als Prozent>
-* [x] <Ausgabe in CHF>
-* [x] <Next button>
-* [x] <Back button>
-* [x] <Home button>
+* [x] Mehrere Schritte machen>
+* [x] Ausgabe als Prozent
+* [x] Ausgabe in CHF
+* [x] Next button
+* [x] Back button
+* [x] Home button

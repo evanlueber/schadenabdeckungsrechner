@@ -1,10 +1,10 @@
 import React from "react"
 
-const MyInput = ({title, value, onChange, step, setStep}) => {
+const MyInput = ({title, hoverText, value, onChange, step, setStep}) => {
     return (
         <>
-            <h2 className='inputTitle'>{title}</h2>
-            <input type="text" name="" id="input" value={value} onChange={onChange}/>
+            <h2 className='inputTitle'>Geben Sie ihre/n <span id="title">{title}<span id="descriptionTitle">{hoverText}</span></span> an</h2>
+            <input type="number" name="" id="input" value={value} onChange={onChange}/>
 
             <div className="backNext">
               {step >= 2 && step < 4 ?

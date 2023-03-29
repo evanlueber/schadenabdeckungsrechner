@@ -26,26 +26,37 @@ function App() {
             {
             step === 1 ?
               <>
-                <MyInput title="Geben Sie ihre Versicherungssumme ein" value={vsSumme} onChange={(e) => setVsSumme(e.target.value)} step={step} setStep={setStep}/>
+                <MyInput title="Versicherungssumme" hoverText="Die Versicherungssumme wurde mit ihrem Versicherungsberater abgemacht. Sie beschreibt den abgemachten Wert ihres Hausrates." value={vsSumme} onChange={(e) => setVsSumme(e.target.value)} step={step} setStep={setStep}/>
               </>
               :
               step === 2?
               <>
-                <MyInput title="Geben Sie ihren Versicherungswert an" value={vsWert} onChange={(e) => setVsWert(e.target.value)} step={step} setStep={setStep} />
+                <MyInput title="Versicherungswert" hoverText="Der Versicherungswert beschreibt den momentanen Wert ihres Hausrates. Er kann von der Versicherungsumme abweichen." value={vsWert} onChange={(e) => setVsWert(e.target.value)} step={step} setStep={setStep} />
               </>
               :
               step === 3 ?
               <>
-                <MyInput title="Geben Sie ihren Schaden an" value={schaden} onChange={(e) => setSchaden(e.target.value)} step={step} setStep={setStep}/>
+                <MyInput title="Schaden" hoverText="Der Schaden ist der Wert, der gebraucht wird, um die beschädigte Einrichtung zu ersetzen." value={schaden} onChange={(e) => setSchaden(e.target.value)} step={step} setStep={setStep}/>
               </>
               :
-              <>
+              <div id='lastSide'>
                 <p>Ihre Versicherung wird {Math.round((vsSumme / vsWert) * 100 * 100) / 100 >= 100 ? 100 : Math.round((vsSumme / vsWert) * 100 * 100) / 100}% des Schadens übernehmen</p>
                 <p>Ihre Versicherung wird {Math.round((vsSumme / vsWert) * schaden * 100) /100 >= schaden ? schaden : Math.round((vsSumme / vsWert) * schaden * 100) /100}CHF übernehmen</p>
-                <p className='werte'>Versicherungssumme: {vsSumme}CHF</p>
-                <p className='werte'>Versicherungswert: {vsWert}CHF</p>
-                <p className='werte'>Schaden: {schaden}CHF</p>
-              </>
+                
+                {
+                  vsSumme > vsWert ?
+                  <>
+                    <p className='vsWarnung'>Sie sind überversichert</p>
+                  </>
+                  :
+                  vsSumme < vsWert ?
+                  <>
+                    <p className='vsWarnung'>Sie sind unterversichert</p>
+                  </>
+                  :
+                  ""
+                }
+              </div>
             }
           </div>
           {step === 4 ?
@@ -53,6 +64,14 @@ function App() {
           :
             ""
           }
+        </div>
+
+        <div id='werteContainer'>
+          <p>Versicherungssumme: <br /> <span className='werteVariables'>{vsSumme}</span>CHF</p> 
+          <br />
+          <p>Versicherungswert: <br /><span className='werteVariables'>{vsWert}</span>CHF</p>
+          <br />
+          <p>Schaden: <br /><span className='werteVariables'>{schaden}</span>CHF</p> 
         </div>          
       </header>
     </div>

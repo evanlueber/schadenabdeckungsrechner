@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import MyInput from './components/MyInput';
+import {FaRegWindowClose} from 'react-icons/fa'
 
 function App() {
- const [vsSumme, setVsSumme] = useState("")
- const [vsWert, setVsWert] = useState("")
- const [schaden, setSchaden] = useState("")
+ const [vsSumme, setVsSumme] = useState("0")
+ const [vsWert, setVsWert] = useState("0")
+ const [schaden, setSchaden] = useState("0")
  const [step, setStep] = useState(1)
+ const [active, setActive] = useState(false)
 
 
  const toOutString = (value) => {
@@ -29,6 +31,14 @@ function App() {
   return (
     <div className="App">
 
+      <div className={"popUp "+ (active?"active":"")}>
+        <div id='popUpContainer'>
+          <input type="text" />
+          <button id='close' onClick={() => setActive(false)}>
+            <FaRegWindowClose size={40}/>
+          </button>
+        </div>
+      </div>
       <header className="App-header">
         <div id="container">
           <h1>Schadensabdeckung</h1>
@@ -42,17 +52,17 @@ function App() {
           </div>
             {
             step === 1 ?
-              <div id='inputKasten'>
+              <div className='inputKasten'>
                 <MyInput title="Versicherungssumme" hoverText="Die Versicherungssumme wurde mit ihrem Versicherungsberater abgemacht. Sie beschreibt den abgemachten Wert ihres Hausrates." value={vsSumme} onChange={setVsSumme} step={step} setStep={setStep}/>
               </div>
               :
               step === 2?
-              <div id='inputKasten'>
-                <MyInput title="Versicherungswert" hoverText="Der Versicherungswert beschreibt den momentanen Wert ihres Hausrates. Er kann von der Versicherungsumme abweichen." value={vsWert} onChange={setVsWert} step={step} setStep={setStep} />
+              <div className='inputKasten'>
+                <MyInput title="Versicherungswert" hoverText="Der Versicherungswert beschreibt den momentanen Wert ihres Hausrates. Er kann von der Versicherungsumme abweichen." value={vsWert} onChange={setVsWert} step={step} setStep={setStep} setActive={setActive}/>
               </div>
               :
               step === 3 ?
-              <div id='inputKasten'>
+              <div className='inputKasten'>
                 <MyInput title="Schaden" hoverText="Der Schaden ist der Wert, der gebraucht wird, um die beschädigte Einrichtung zu ersetzen." value={schaden} onChange={setSchaden} step={step} setStep={setStep} vsWert={vsWert} />
               </div>
               :
@@ -80,6 +90,7 @@ function App() {
           :
             ""
           }
+
         </div>
 
         <div id='werteContainer'>

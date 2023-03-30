@@ -1,8 +1,12 @@
 import React from "react"
 
-const MyInput = ({title, hoverText, value, onChange, step, setStep, vsWert}) => {
+const MyInput = ({title, hoverText, value, onChange, step, setStep, vsWert, setActive}) => {
 
   const toNumber = (value) => {
+    if (value === "") {
+      value = 0;
+    }
+
     const numericInput = value.toString().replace(/[^0-9.]/g, "");
     return parseFloat(numericInput);
   };
@@ -41,9 +45,14 @@ const MyInput = ({title, hoverText, value, onChange, step, setStep, vsWert}) => 
                 :
                   ""
               }
+              {step === 2?
+                  <button id="ermittelnButton" onClick={() => setActive(true)}>Wert ermitteln</button>
+                :
+                ""
+              }
               {step < 4 ?
-                <button id='next' onClick={()=>{
-                  if (value ==="" ) {
+                <button id='next' type="submit" onClick={()=>{
+                  if (value ==="0" ) {
                     alert("Geben Sie einen Wert in das Inputfeld ein")
                   } 
                   else if ( title === "Schaden" && value > vsWert) {

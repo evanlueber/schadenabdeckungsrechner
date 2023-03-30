@@ -10,7 +10,11 @@ function App() {
  const [schaden, setSchaden] = useState("0")
  const [step, setStep] = useState(1)
  const [active, setActive] = useState(false)
+ const [items, setItems] = useState([{gegenstand: "", wert: 0}])
 
+ function addInputs() {
+  setItems()
+ }
 
  const toOutString = (value) => {
   let numericInput = value.toString().replace(/[^0-9.]/g, "");
@@ -33,9 +37,12 @@ function App() {
 
       <div className={"popUp "+ (active?"active":"")}>
         <div id='popUpContainer'>
-          <input type="text" />
+          <div className=''>
+            <input className="popUpInput" type="text" placeholder='Objet eingeben...'/>
+            <input className="popUpInput" type="text" placeholder='Wert eingeben...'/>
+          </div>
           <button id='close' onClick={() => setActive(false)}>
-            <FaRegWindowClose size={40}/>
+            <FaRegWindowClose id="closeIcon" size={40}/>
           </button>
         </div>
       </div>

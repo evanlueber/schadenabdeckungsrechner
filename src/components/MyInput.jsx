@@ -37,7 +37,7 @@ const MyInput = ({title, hoverText, value, onChange, step, setStep, vsWert, setA
               onChange={($event) => onChange(toNumber($event.target.value))}
               onFocus={($event) => toNumber($event.target.value)}
               onBlur={($event) => toOutString($event.target.value)}
-              id="input"
+              className="input"
             />
             <div className="backNext">
               {step >= 2 && step < 4 ?
@@ -55,7 +55,7 @@ const MyInput = ({title, hoverText, value, onChange, step, setStep, vsWert, setA
                   if (value ==="0" ) {
                     alert("Geben Sie einen Wert in das Inputfeld ein")
                   } 
-                  else if ( title === "Schaden" && value > vsWert) {
+                  else if ( title === "Schaden" && value > vsWert || value === 0) {
                     alert("Der Schaden darf nicht höher als der Versicherungswert sein")
                   }
                   else {

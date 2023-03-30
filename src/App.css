@@ -159,7 +159,7 @@
   margin-top: 150px;
 }
 
-#input {
+.input {
   border: 2px solid white;
   background-color: transparent;
   color: white;
@@ -173,18 +173,18 @@
   color: rgba(255, 255, 255, 0.682);
 }
 
-#input:hover {
+.input:hover {
   border: 2px solid turquoise;
   border-radius: 3px;
 }
 
-#input:focus {
+.input:focus {
   background-color: rgba(64, 224, 208, 0.512);
   border-radius: 3px; 
 }
 
-#input::-webkit-outer-spin-button,
-#input::-webkit-inner-spin-button {
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -257,6 +257,7 @@
   z-index: 30;
   border-radius: 10px;
   position: relative;
+  background-color: #202d41;
 }
 
 .popUp {
@@ -305,4 +306,45 @@
   height: 40px;
   background-color: transparent;
   border: none;
+}
+
+#closeIcon {
+  color: white;
+}
+
+#closeIcon:hover {
+  color: turquoise;
+}
+
+.popUpInput {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  backdrop-filter: blur(5px); 
+  text-align: left;
+  padding-left: 10px;
+  width: 200px;
+  height: 30px;
+  font-size: 18pt;
+  margin-top: 5%;
+}
+
+.popUpInput:hover {
+  border: 2px solid turquoise;
+  border-radius: 3px;
+}
+
+.popUpInput:hover::placeholder {
+  color: turquoise;
+}
+
+.popUpInput:focus {
+  background-color: rgba(64, 224, 208, 0.512);
+  border-radius: 3px; 
+  z-index: 40;
+}
+
+.popUpInput::placeholder {
+  color: rgba(255, 255, 255, 0.66);
 }

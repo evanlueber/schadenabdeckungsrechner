@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState } from 'react';
 import MyInput from './components/MyInput';
 import {FaRegWindowClose} from 'react-icons/fa'
+import {MdAddToPhotos} from 'react-icons/md'
 
 function App() {
  const [vsSumme, setVsSumme] = useState("0")
@@ -10,10 +11,17 @@ function App() {
  const [schaden, setSchaden] = useState("0")
  const [step, setStep] = useState(1)
  const [active, setActive] = useState(false)
- const [items, setItems] = useState([{gegenstand: "", wert: 0}])
+ const [items, setItems] = useState([{gegenstand: "", wert: ""}])
 
  function addInputs() {
-  setItems()
+  setItems((oldArr) => {
+    const result = [...oldArr]
+    result.push({
+      gegenstand:"",
+      wert: ""
+    })
+    return result
+  })
  }
 
  const toOutString = (value) => {
@@ -37,12 +45,39 @@ function App() {
 
       <div className={"popUp "+ (active?"active":"")}>
         <div id='popUpContainer'>
-          <div className=''>
-            <input className="popUpInput" type="text" placeholder='Objet eingeben...'/>
-            <input className="popUpInput" type="text" placeholder='Wert eingeben...'/>
+          <div className='inputDiv'>
+            {
+              items.map((item, index)=> {
+                const setGegenstand = (e) => {
+                    setItems((prevArr) => {
+                    const result = [...prevArr];
+                    result[index].gegenstand = e.target.value;
+                    return result;
+                  });
+                };
+                  
+                const setWert = (e) => {
+                  setItems((prevArr) => {
+                    const result = [...prevArr];
+                    result[index].wert = e;
+                    return result;
+                  });
+                };
+
+                return (
+                  <div>
+                    <input className="popUpInput" type="text" placeholder='Gegenstand...' value={item.gegenstand} onChange={setGegenstand}/>
+                    <input className="popUpInput" type="text" placeholder='Wert...' value={item.wert} onChange={setWert}/>
+                  </div>
+                )
+              })
+            }
           </div>
           <button id='close' onClick={() => setActive(false)}>
             <FaRegWindowClose id="closeIcon" size={40}/>
+          </button>
+          <button id='add' onClick={addInputs}>
+            <MdAddToPhotos id='addIcon' size={50}/>
           </button>
         </div>
       </div>

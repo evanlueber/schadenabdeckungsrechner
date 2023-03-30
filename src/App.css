@@ -253,7 +253,7 @@
   height: 80%;
   width: 50%;
   background-color: white;
-  border: 2px solid turquoise;
+  border: 2px solid black;
   z-index: 30;
   border-radius: 10px;
   position: relative;
@@ -299,7 +299,7 @@
 #close {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   display: flex;
   align-items: center;
   width: 40px;
@@ -347,4 +347,38 @@
 
 .popUpInput::placeholder {
   color: rgba(255, 255, 255, 0.66);
+}
+
+.inputDiv {
+  overflow-y: scroll;
+  height: 80%;
+}
+
+#add {
+  background: none;
+  border: none;
+}
+
+#addIcon {
+  color: white;
+}
+
+#addIcon:hover {
+  color: turquoise;
+}
+
+.inputDiv::-webkit-scrollbar {
+  width: 10px;
+}
+
+.inputDiv::-webkit-scrollbar-track {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.inputDiv::-webkit-scrollbar-thumb {
+  border: 2px solid #202d41;
+  border-radius: 10px;
+  background-color: turquoise;
 }

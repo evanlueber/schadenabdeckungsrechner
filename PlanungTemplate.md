@@ -39,6 +39,14 @@ Ich informiere regelmässig über meine Tätigkeiten.
 * Hovereffekte
 * Nur Zahlen eingeben können
 * Zahlenformat mit Hochkommas
+* Versicherungswert PopUp Fenster
+* Inputs für Objekt und Wert in PopUp Fenster
+* Schöne Scrollbar in PopUp Fenster
+* Hinzufügen Knopf für neue Obejekt und Wert Inputs in PopUp Fenster
+* Löschen Knopf für Löschen von Inputs in PopUp Fenster
+* Zusammenrechnen der Werte
+* Summe der Werte mit Knopf direkt in Versicherungswert Input eintragen
+
 
 ---
 
@@ -51,6 +59,9 @@ Ich informiere regelmässig über meine Tätigkeiten.
 * [x] Hervorheben der Mitte der Seite
 * [x] Pages mit Erklärungen>
 * [x] Hintergrungbild
+* [ ] Löschen Knopf für Löschen von Inputs in PopUp Fenster
+* [ ] Zusammenrechnen der Werte
+* [ ] Summe der Werte mit Knopf direkt in Versicherungswert Input eintragen
 
 #### in Arbeit
 
@@ -67,6 +78,10 @@ Ich informiere regelmässig über meine Tätigkeiten.
 * [x] Hovereffekte
 * [x] Nur Zahlen eingeben können
 * [x] Zahlenformat mit Hochkommas
+* [x] Versicherungswert PopUp Fenster
+* [x] Inputs für Objekt und Wert in PopUp Fenster
+* [x] Schöne Scrollbar in PopUp Fenster
+* [x] Hinzufügen Knopf für neue Obejekt und Wert Inputs in PopUp Fenster
 
 ---
 

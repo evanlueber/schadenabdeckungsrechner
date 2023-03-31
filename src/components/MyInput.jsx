@@ -55,7 +55,7 @@ const MyInput = ({title, hoverText, value, onChange, step, setStep, vsWert, setA
                   if (value ==="0" ) {
                     alert("Geben Sie einen Wert in das Inputfeld ein")
                   } 
-                  else if ( title === "Schaden" && value > vsWert || value === 0) {
+                  else if ( title === "Schaden" && value > vsWert || value === "0") {
                     alert("Der Schaden darf nicht höher als der Versicherungswert sein")
                   }
                   else {

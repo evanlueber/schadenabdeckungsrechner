@@ -181,12 +181,12 @@ const toNumber = (value) => {
                 {
                   vsSumme > vsWert ?
                   <>
-                    <p className='vsWarnung'>Sie sind überversichert</p>
+                    <p className='vsWarnung'>WARNUNG: Sie sind überversichert!</p>
                   </>
                   :
                   vsSumme < vsWert ?
                   <>
-                    <p className='vsWarnung'>Sie sind unterversichert</p>
+                    <p className='vsWarnung'>WARNUNG: Sie sind unterversichert!</p>
                   </>
                   :
                   ""

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import MyInput from './components/MyInput';
 import {FaRegWindowClose} from 'react-icons/fa'
 import {MdDeleteOutline} from 'react-icons/md'
-import {IoMdAddCircleOutline} from 'react-icons/io'
 
 function App() {
  const [vsSumme, setVsSumme] = useState("0")
@@ -13,6 +12,20 @@ function App() {
  const [step, setStep] = useState(1)
  const [active, setActive] = useState(false)
  const [items, setItems] = useState([{gegenstand: "", wert: ""}])
+
+ function checkForDuplicates(arr) {
+  const hasDuplicates = arr.filter((item, index) => arr.findIndex(obj => obj.gegenstand === item.gegenstand && obj.wert === item.wert) !== index)
+  return hasDuplicates.length > 0;
+}
+
+const toNumber = (value) => {
+    if (value === "") {
+      value = 0;
+    }
+
+    const numericInput = value.toString().replace(/[^0-9.]/g, "");
+    return parseFloat(numericInput);
+  };
 
  function addInputs() {
   setItems((oldArr) => {
@@ -23,6 +36,17 @@ function App() {
     })
     return result
   })
+ }
+
+ function sumUpAndSelect() {
+  setVsWert("0")
+  items.forEach((item)=> {
+    setVsWert((wert)=> {
+      let resultat = parseFloat(wert);
+      resultat += parseFloat(item.wert.toString());
+      return resultat;
+    })
+  });
  }
 
  const toOutString = (value) => {
@@ -64,17 +88,19 @@ function App() {
                     return result;
                   });
 
-                  setWert((old) => {
-                    const result = old;
-                    result += e;
-                    return result;
-                  })
                 };
 
                 return (
                   <div className='fullAddedItem'>
-                    <input className="popUpInput" type="text" placeholder='Gegenstand...' value={item.gegenstand} onChange={setGegenstand}/>
-                    <input className="popUpInput" type="text" placeholder='Wert...' value={item.wert} onChange={setWert}/>
+                    <input className="popUpInput" type="text" placeholder='Gegenstand...' value={item.gegenstand} onChange={(e) => setGegenstand(e)}/>
+                    <input 
+                      className="popUpInput" 
+                      type="text" placeholder='Wert...' 
+                      value={toOutString(item.wert)} 
+                      onChange={($event) => setWert(toNumber($event.target.value))}
+                      onFocus={($event) => toNumber($event.target.value)}
+                      onBlur={($event) => toOutString($event.target.value)}
+                    />
                     <button className='delete'
                       onClick={() => {
                         setItems((prevArr) => {
@@ -92,14 +118,30 @@ function App() {
               })
             }
           </div>
-          <button id='close' onClick={() => setActive(false)}>
-            <FaRegWindowClose id="closeIcon" size={40}/>
+          <button 
+            id='close' 
+            onClick={() => {
+              setActive(false)
+              setVsWert("0")
+              setItems([{gegenstand: "", wert: ""}]);
+            }}>
+            <FaRegWindowClose 
+              id="closeIcon" 
+              size={40}
+            />
           </button>      
           <button id='add' onClick={addInputs}>
             +
           </button>
           <button id='select' onClick={() => {
-              setActive(false);
+            let check = checkForDuplicates(items)
+              if (check) {
+                alert("Versichern Sie sich, dass keine Duplikate vorhanden sind oder bennenen Sie den Gegenstand um, um Verwirrung zu vermeiden")
+              }
+              else {
+                setActive(false);
+                sumUpAndSelect();
+              }     
             }}>
             Übernehmen
           </button>

@@ -46,6 +46,7 @@ Ich informiere regelmässig über meine Tätigkeiten.
 * Löschen Knopf für Löschen von Inputs in PopUp Fenster
 * Zusammenrechnen der Werte
 * Summe der Werte mit Knopf direkt in Versicherungswert Input eintragen
+* Duplikate vermeiden
 
 
 ---
@@ -59,9 +60,10 @@ Ich informiere regelmässig über meine Tätigkeiten.
 * [x] Hervorheben der Mitte der Seite
 * [x] Pages mit Erklärungen>
 * [x] Hintergrungbild
-* [ ] Löschen Knopf für Löschen von Inputs in PopUp Fenster
-* [ ] Zusammenrechnen der Werte
-* [ ] Summe der Werte mit Knopf direkt in Versicherungswert Input eintragen
+* [x] Löschen Knopf für Löschen von Inputs in PopUp Fenster
+* [x] Zusammenrechnen der Werte
+* [x] Summe der Werte mit Knopf direkt in Versicherungswert Input eintragen
+* [x] Duplikate vermeiden
 
 #### in Arbeit
 

@@ -63,10 +63,16 @@ function App() {
                     result[index].wert = e;
                     return result;
                   });
+
+                  setWert((old) => {
+                    const result = old;
+                    result += e;
+                    return result;
+                  })
                 };
 
                 return (
-                  <div className='fullAdd'>
+                  <div className='fullAddedItem'>
                     <input className="popUpInput" type="text" placeholder='Gegenstand...' value={item.gegenstand} onChange={setGegenstand}/>
                     <input className="popUpInput" type="text" placeholder='Wert...' value={item.wert} onChange={setWert}/>
                     <button className='delete'
@@ -79,7 +85,7 @@ function App() {
                           return newArr;
                         });
                      }}>
-                      <MdDeleteOutline id='deleteIcon' size={45}/>
+                      <MdDeleteOutline id='deleteIcon' size={40}/>
                     </button>
                   </div>
                 )
@@ -88,9 +94,14 @@ function App() {
           </div>
           <button id='close' onClick={() => setActive(false)}>
             <FaRegWindowClose id="closeIcon" size={40}/>
-          </button>
+          </button>      
           <button id='add' onClick={addInputs}>
-            <IoMdAddCircleOutline id='addIcon' size={50}/>
+            +
+          </button>
+          <button id='select' onClick={() => {
+              setActive(false);
+            }}>
+            Übernehmen
           </button>
         </div>
       </div>

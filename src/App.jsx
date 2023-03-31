@@ -250,9 +250,9 @@ function App() {
               id="home"
               onClick={() => {
                 setStep(1);
-                setVsSumme("");
-                setVsWert("");
-                setSchaden("");
+                setVsSumme("0");
+                setVsWert("0");
+                setSchaden("0");
               }}
             >
               Home

@@ -3,7 +3,8 @@ import './App.css';
 import React, { useState } from 'react';
 import MyInput from './components/MyInput';
 import {FaRegWindowClose} from 'react-icons/fa'
-import {MdAddToPhotos} from 'react-icons/md'
+import {MdDeleteOutline} from 'react-icons/md'
+import {IoMdAddCircleOutline} from 'react-icons/io'
 
 function App() {
  const [vsSumme, setVsSumme] = useState("0")
@@ -65,9 +66,21 @@ function App() {
                 };
 
                 return (
-                  <div>
+                  <div className='fullAdd'>
                     <input className="popUpInput" type="text" placeholder='Gegenstand...' value={item.gegenstand} onChange={setGegenstand}/>
                     <input className="popUpInput" type="text" placeholder='Wert...' value={item.wert} onChange={setWert}/>
+                    <button className='delete'
+                      onClick={() => {
+                        setItems((prevArr) => {
+                          const result = [...prevArr];
+                          const newArr = result.filter(
+                            (e, i) => e !== item && index != i
+                          );
+                          return newArr;
+                        });
+                     }}>
+                      <MdDeleteOutline id='deleteIcon' size={45}/>
+                    </button>
                   </div>
                 )
               })
@@ -77,7 +90,7 @@ function App() {
             <FaRegWindowClose id="closeIcon" size={40}/>
           </button>
           <button id='add' onClick={addInputs}>
-            <MdAddToPhotos id='addIcon' size={50}/>
+            <IoMdAddCircleOutline id='addIcon' size={50}/>
           </button>
         </div>
       </div>

@@ -223,7 +223,7 @@ function App() {
                 <b>
                   {Math.round((vsSumme / vsWert) * schaden * 100) / 100 >=
                   schaden
-                    ? schaden
+                    ? "den vollen Betrag"
                     : Math.round((vsSumme / vsWert) * schaden * 100) / 100}{" "}
                   CHF
                 </b>{" "}

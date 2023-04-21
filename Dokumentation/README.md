@@ -11,6 +11,9 @@ Es gibt einen Plan, in dem verschiedene Ideen eingetragen wurden die ich hatte. 
 ## Aufbau
 Das Programm enthält vier Schritte durch die man sich durchdrücken kann, jedoch in drei von vier Schritten eine Angabe machen kann. Dies wurde mit einer Route entworfen. Ich habe vier Schritte gemacht, in denen sich je ein neuer Inhalt auf der Seite blicken lässt. Somit konnte ich umgehen, mehrere Seiten amchen zu müssen. 
 ## Ausführen
+### Voraussetzungen
+- node installiert
+- docker installiert
 ### Local
 - npm install
 - npm start

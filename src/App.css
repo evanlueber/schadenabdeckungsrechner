@@ -104,6 +104,7 @@
 .backNext > #back {
   grid-column: 1 / 2;
   margin-left: 75px;
+  margin-top: 50px;
   min-width: 100px;
   font-size: 14pt;
   justify-self: start;
@@ -116,6 +117,7 @@
 .backNext > #next {
   grid-column: 3 / 4;
   margin-right: 75px;
+  margin-top: 50px;
   min-width: 100px;
   font-size: 14pt;
   justify-self: end;
@@ -144,6 +146,7 @@
   min-width: 100px;
   font-size: 14pt;
   margin-top: 50px;
+  margin-top: 50px;
   border-radius: 5px;
   border: 2px solid white;
   background-color: transparent;
@@ -159,27 +162,31 @@
 }
 
 .input {
-  border: 2px solid white;
+  border: none;
+  border-bottom: 2px solid white;
   background-color: transparent;
+  border-radius: 2px;
   color: white;
-  border-radius: 5px;
-  backdrop-filter: blur(5px);
-  text-align: left;
-  padding-left: 10px;
+  text-align: right;
   width: 200px;
   height: 30px;
   font-size: 18pt;
   color: rgba(255, 255, 255, 0.682);
+  position: fixed;
+  left: 38.5%;
+  transition: width 0.1s, height 0.1s;
 }
 
 .input:hover {
-  border: 2px solid turquoise;
-  border-radius: 3px;
+  width: 225px;
+  height: 35px;
 }
 
-.input:focus {
-  background-color: rgba(64, 224, 208, 0.512);
-  border-radius: 3px;
+.input:focus-within {
+  width: 225px;
+  height: 35px;
+  outline: none;
+  border-bottom-color: turquoise;
 }
 
 .input::-webkit-outer-spin-button,
@@ -251,11 +258,12 @@
 #popUpContainer {
   height: 80%;
   width: 50%;
-  border: 2px solid black;
   z-index: 30;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   position: relative;
-  background-color: #29293d;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2.5fr 0.5fr;
@@ -268,7 +276,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
   transform: scale(0);
@@ -283,6 +291,7 @@
 #ermittelnButton {
   grid-column: 2 / 3;
   margin-left: 75px;
+  margin-top: 50px;
   min-width: 100px;
   font-size: 14pt;
   justify-self: start;
@@ -318,11 +327,12 @@
 }
 
 .popUpInput {
-  border: 2px solid white;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
   background-color: transparent;
   color: white;
-  border-radius: 5px;
-  backdrop-filter: blur(5px);
+  border-radius: 2px;
   text-align: left;
   padding-left: 10px;
   width: 175px;
@@ -331,18 +341,20 @@
 }
 
 .popUpInput:hover {
-  border: 2px solid turquoise;
-  border-radius: 3px;
-}
+  border-bottom: 2px solid turquoise;
+  border-radius: 2px;
 
-.popUpInput:hover::placeholder {
-  color: turquoise;
 }
 
 .popUpInput:focus {
-  background-color: rgba(64, 224, 208, 0.512);
-  border-radius: 3px;
+  border-radius: 2px;
+  color: turquoise;
+  border-bottom: 2px solid turquoise;
   z-index: 40;
+}
+
+.popUpInput:focus::placeholder {
+  color: turquoise;
 }
 
 .popUpInput::placeholder {
@@ -380,7 +392,7 @@
 }
 
 .inputDiv::-webkit-scrollbar-track {
-  background: #29293d;
+  background: transparent;
   border-radius: 10px;
 }
 

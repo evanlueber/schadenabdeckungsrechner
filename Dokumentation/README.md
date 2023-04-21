@@ -1,70 +1,12 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Versicherungsrechner
+## Beauftragter
+Evan Lüber
+## Autraggeber
+- Kantonsschule Büelrain Winterthur auf Bitte der BBW
+- Berufsbildung Winterthur im Rahmen eines Moduls
+## Beschreibung
+Diese Applikation stellt einen Schadenabdeckungsrechner dar. Er kann mit Hilfe der Angaben des Benutzers, welche Versicherungssumme, Versicherungswert und der verursachten Schaden sind, berechnen wieviel Prozent und wieviel Franken die Versicherung der Person übernehmen wird. Er wurde im Rahmen eines Programmiermoduls der BBW am Freitag Nachmittag programmiert. In dem Schritt, indem der Versicherungswert angegeben werden muss, habe ich ein PopUp Fenster erstellt, dass man hervorrufen kann. In diesem kann man seine Gegenstände mit ihrem aktuellen Wert, die man momentan besitzt, eintragen, falls man nicht genau weiss, was sein aktueller Versicherungswert ist.
+## Planung
+Es gibt einen Plan, in dem verschiedene Ideen eingetragen wurden die ich hatte. Ich habe sie je nach Fortschritt unter den entsprechenden Überschriften eingetragen. Ich habe die Ideen im Verlauf des Projekts kaum noch verschoben sondern nur noch abgehakt, wenn ich sie umgesetzt hatte.
+## Aufbau
+Das Programm enthält vier Schritte durch die man sich durchdrücken kann, jedoch in drei von vier Schritten eine Angabe machen kann. Dies wurde mit einer Route entworfen. Ich habe vier Schritte gemacht, in denen sich je ein neuer Inhalt auf der Seite blicken lässt. Somit konnte ich umgehen, mehrere Seiten amchen zu müssen. 

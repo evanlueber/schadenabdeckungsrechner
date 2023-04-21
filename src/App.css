@@ -171,10 +171,13 @@
   width: 200px;
   height: 30px;
   font-size: 18pt;
-  color: rgba(255, 255, 255, 0.682);
   position: fixed;
   left: 38.5%;
   transition: width 0.1s, height 0.1s;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .input:hover {

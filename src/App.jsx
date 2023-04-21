@@ -6,9 +6,9 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 
 function App() {
-  const [vsSumme, setVsSumme] = useState("0");
-  const [vsWert, setVsWert] = useState("0");
-  const [schaden, setSchaden] = useState("0");
+  const [vsSumme, setVsSumme] = useState("");
+  const [vsWert, setVsWert] = useState("");
+  const [schaden, setSchaden] = useState("");
   const [step, setStep] = useState(1);
   const [active, setActive] = useState(false);
   const [items, setItems] = useState([{ gegenstand: "", wert: "" }]);
@@ -24,10 +24,6 @@ function App() {
   }
 
   const toNumber = (value) => {
-    if (value === "") {
-      value = 0;
-    }
-
     const numericInput = value.toString().replace(/[^0-9.]/g, "");
     return parseFloat(numericInput);
   };
@@ -179,6 +175,7 @@ function App() {
                 value={vsSumme}
                 onChange={setVsSumme}
                 step={step}
+                placeholder="Summe"
                 setStep={setStep}
               />
             </div>
@@ -191,6 +188,7 @@ function App() {
                 onChange={setVsWert}
                 step={step}
                 setStep={setStep}
+                placeholder="Wert"
                 setActive={setActive}
               />
             </div>
@@ -203,6 +201,7 @@ function App() {
                 onChange={setSchaden}
                 step={step}
                 setStep={setStep}
+                placeholder="Schaden"
                 vsWert={vsWert}
               />
             </div>

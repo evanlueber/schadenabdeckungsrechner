@@ -8,13 +8,10 @@ const MyInput = ({
   step,
   setStep,
   vsWert,
+  placeholder,
   setActive,
 }) => {
   const toNumber = (value) => {
-    if (value === "") {
-      value = 0;
-    }
-
     const numericInput = value.toString().replace(/[^0-9.]/g, "");
     return parseFloat(numericInput);
   };
@@ -51,6 +48,7 @@ const MyInput = ({
         onFocus={($event) => toNumber($event.target.value)}
         onBlur={($event) => toOutString($event.target.value)}
         className="input"
+        placeholder={placeholder}
       />
       <div className="backNext">
         {step >= 2 && step < 4 ? (
@@ -72,7 +70,7 @@ const MyInput = ({
             id="next"
             type="submit"
             onClick={() => {
-              if (value === "0") {
+              if (value === "") {
                 alert("Geben Sie einen Wert in das Inputfeld ein");
               } else if (
                 (title === "Schaden" && value > vsWert) ||

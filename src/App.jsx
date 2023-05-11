@@ -129,7 +129,7 @@ function App() {
             id="close"
             onClick={() => {
               setActive(false);
-              setVsWert("0");
+              setVsWert("");
               setItems([{ gegenstand: "", wert: "" }]);
             }}
           >
@@ -249,9 +249,9 @@ function App() {
               id="home"
               onClick={() => {
                 setStep(1);
-                setVsSumme("0");
-                setVsWert("0");
-                setSchaden("0");
+                setVsSumme("");
+                setVsWert("");
+                setSchaden("");
               }}
             >
               Home

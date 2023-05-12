@@ -1,11 +1,16 @@
 # Use node image as base image
 FROM node:16.15.0-bullseye-slim
+ 
+# Installing git
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
 
 # Set the working directory in the image
 WORKDIR /app
 
 # Copy all files to the image
-COPY . .
+RUN git clone https://github.com/evanlueber/schadenabdeckungsrechner .
 
 # Install the npm dependencies
 RUN npm ci
